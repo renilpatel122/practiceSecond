@@ -1,0 +1,15 @@
+openapi: 3.0.0
+info:
+  title: Inventory Management API
+  version: 1.0.0
+paths:
+  /products:
+    $ref: './apis/product-api.yaml#/paths/~1products'
+  /inventory/{id}:
+    $ref: './apis/inventory-api.yaml#/paths/~1inventory~1{id}'
+components:
+  schemas:
+    Product:
+      $ref: './components/schemas.yaml#/Product'
+    Inventory:
+      $ref: './components/schemas.yaml#/Inventory'

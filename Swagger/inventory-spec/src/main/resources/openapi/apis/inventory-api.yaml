@@ -1,0 +1,22 @@
+paths:
+  /inventory/{id}:
+    get:
+      tags:
+        - Inventory
+      summary: Get inventory by product ID
+      operationId: getInventory
+      parameters:
+        - name: id
+          in: path
+          description: Product ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Inventory of the specified product
+          content:
+            application/json:
+              schema:
+                $ref: '../components/schemas.yaml#/Inventory'
