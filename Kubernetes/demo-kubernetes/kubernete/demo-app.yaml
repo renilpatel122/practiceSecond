@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-spring-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-spring-app
+  template:
+    metadata:
+      labels:
+        app: demo-spring-app
+    spec:
+      containers:
+        - name: demo-spring-container
+          image: renilpatel/demo-kubernetes:latest # Replace with your Docker Hub image
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-spring-service
+spec:
+  selector:
+    app: demo-spring-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80           # internal cluster port
+      targetPort: 8080   # app port inside the container
+      nodePort: 30001    # external access on minikube IP
+
+---
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: demo-spring-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: demo-spring-deployment
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50

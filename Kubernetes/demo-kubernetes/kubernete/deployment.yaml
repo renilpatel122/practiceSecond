@@ -1,0 +1,20 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-spring-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-spring-app
+  template:
+    metadata:
+      labels:
+        app: demo-spring-app
+    spec:
+      containers:
+        - name: spring-demo-kubernetes
+          image: renilpatel/demo-kubernetes:latest
+          ports:
+            - containerPort: 8080

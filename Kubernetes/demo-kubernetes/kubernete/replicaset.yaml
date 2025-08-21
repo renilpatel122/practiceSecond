@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-spring-replicaset
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-spring-app
+  template:
+    metadata:
+      labels:
+        app: demo-spring-app
+    spec:
+      containers:
+        - name: spring-demo-kubernetes
+          image: renilpatel/demo-kubernetes:latest
+          ports:
+            - containerPort: 8080
