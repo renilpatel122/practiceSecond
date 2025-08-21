@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+grpc:
+  server:
+    port: 9090
+    enableReflection: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/accountdb
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update

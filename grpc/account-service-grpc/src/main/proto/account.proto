@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.bank.account.grpc.proto";
+option java_outer_classname = "AccountProto";
+
+package account;
+
+service AccountService {
+  rpc GetAccountById (AccountRequest) returns (AccountResponse);
+}
+
+message AccountRequest {
+  string accountId = 1;
+}
+
+message AccountResponse {
+  string accountId = 1;
+  string name = 2;
+  double balance = 3;
+}
