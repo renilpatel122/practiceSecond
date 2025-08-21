@@ -1,0 +1,2 @@
+rootProject.name = 'banking-platform'
+include 'account-service', 'common-lib', 'transaction-service'
