@@ -1,0 +1,37 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="11" author="developer">
+        <insert tableName="inventory_item">
+            <column name="id" valueNumeric="1"/>
+            <column name="menu_item_id" valueNumeric="1"/>
+            <column name="quantity" valueNumeric="100"/>
+            <column name="shop_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="inventory_item">
+            <column name="id" valueNumeric="2"/>
+            <column name="menu_item_id" valueNumeric="2"/>
+            <column name="quantity" valueNumeric="80"/>
+            <column name="shop_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="inventory_item">
+            <column name="id" valueNumeric="3"/>
+            <column name="menu_item_id" valueNumeric="3"/>
+            <column name="quantity" valueNumeric="60"/>
+            <column name="shop_id" valueNumeric="2"/>
+        </insert>
+
+        <insert tableName="inventory_item">
+            <column name="id" valueNumeric="4"/>
+            <column name="menu_item_id" valueNumeric="4"/>
+            <column name="quantity" valueNumeric="90"/>
+            <column name="shop_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

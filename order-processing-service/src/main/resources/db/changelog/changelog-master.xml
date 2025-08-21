@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- Create Tables -->
+    <include file="db/changelog/create/01-create-shop-table.xml" />
+    <include file="db/changelog/create/02-create-customer-table.xml" />
+    <include file="db/changelog/create/03-create-shop-queue-table.xml" />
+    <include file="db/changelog/create/04-create-order-table.xml" />
+    <include file="db/changelog/create/05-create-menu-table.xml" />
+    <include file="db/changelog/create/06-create-inventory-table.xml" />
+    <include file="db/changelog/create/07-create-order-item-table.xml" />
+
+    <!-- Insert Data -->
+    <include file="db/changelog/insert/08-insert-shop-data.xml" />
+    <include file="db/changelog/insert/09-insert-customer-data.xml" />
+    <include file="db/changelog/insert/10-insert-menu-item-data.xml" />
+    <include file="db/changelog/insert/11-insert-inventory-data.xml" />
+
+</databaseChangeLog>

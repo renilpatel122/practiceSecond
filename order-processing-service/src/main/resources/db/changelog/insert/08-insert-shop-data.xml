@@ -1,0 +1,41 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="8" author="developer">
+        <insert tableName="shop">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Coffee Zone"/>
+            <column name="location" value="Downtown"/>
+            <column name="contact_number" value="1234567890"/>
+            <column name="open_time" value="08:00:00"/>
+            <column name="close_time" value="22:00:00"/>
+            <column name="number_of_queues" valueNumeric="2"/>
+            <column name="queue_max_size" valueNumeric="10"/>
+        </insert>
+
+        <insert tableName="shop">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Java Cafe"/>
+            <column name="location" value="Uptown"/>
+            <column name="contact_number" value="2345678901"/>
+            <column name="open_time" value="09:00:00"/>
+            <column name="close_time" value="20:00:00"/>
+            <column name="number_of_queues" valueNumeric="3"/>
+            <column name="queue_max_size" valueNumeric="15"/>
+        </insert>
+
+        <insert tableName="shop">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Brew House"/>
+            <column name="location" value="Midtown"/>
+            <column name="contact_number" value="9876543210"/>
+            <column name="open_time" value="07:00:00"/>
+            <column name="close_time" value="21:00:00"/>
+            <column name="number_of_queues" valueNumeric="2"/>
+            <column name="queue_max_size" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

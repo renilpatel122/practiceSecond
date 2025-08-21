@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="1" author="developer">
+        <createTable tableName="shop">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_number" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="open_time" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="close_time" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number_of_queues" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="queue_max_size" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

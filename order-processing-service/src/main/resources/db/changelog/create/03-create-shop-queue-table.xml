@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="3" author="developer">
+        <createTable tableName="shop_queue">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="shop_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="queue_number" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="shop_queue"
+                baseColumnNames="shop_id"
+                referencedTableName="shop"
+                referencedColumnNames="id"
+                constraintName="fk_shopqueue_shop"/>
+
+        <addForeignKeyConstraint
+                baseTableName="shop_queue"
+                baseColumnNames="customer_id"
+                referencedTableName="customer"
+                referencedColumnNames="id"
+                constraintName="fk_shopqueue_customer"/>
+    </changeSet>
+
+
+</databaseChangeLog>
